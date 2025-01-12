@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body bgcolor="89CFF0">
+    <h1 align="center">Registration Form</h1>
+    <form action="submit_registration" method="post">
+        <fieldset>
+            <legend><b>Personal Details</b></legend>
+
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" maxlength="30" required>
+            <small>(max 30 characters a-z and A-Z)</small>
+            <br><br>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" maxlength="30" required>
+            <small>(max 30 characters a-z and A-Z)</small>
+            <br><br>
+
+            <label for="dob_day">Date of Birth:</label>
+            <select id="dob_day" name="dob_day" required>
+                <option value="" disabled selected>Day</option>
+                <script>
+                    for (let i = 1; i <= 31; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+            <select id="dob_month" name="dob_month" required>
+                <option value="" disabled selected>Month</option>
+                <option value="Jan">January</option>
+                <option value="Feb">February</option>
+                <option value="Mar">March</option>
+                <option value="Apr">April</option>
+                <option value="May">May</option>
+                <option value="Jun">June</option>
+                <option value="Jul">July</option>
+                <option value="Aug">August</option>
+                <option value="Sep">September</option>
+                <option value="Oct">October</option>
+                <option value="Nov">November</option>
+                <option value="Dec">December</option>
+            </select>
+            <select id="dob_year" name="dob_year" required>
+                <option value="" disabled selected>Year</option>
+                <script>
+                    for (let i = 1900; i <= new Date().getFullYear(); i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+            <br><br>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" pattern="\d{10}" required>
+            <small>(10 digit number)</small>
+            <br><br>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label>
+            <br><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+            <br><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" maxlength="30" required>
+            <small>(max 30 characters a-z and A-Z)</small>
+            <br><br>
+
+            <label for="pincode">Pin Code:</label>
+            <input type="text" id="pincode" name="pincode" pattern="\d{6}" required>
+            <small>(6 digit number)</small>
+            <br><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" maxlength="30" required>
+            <small>(max 30 characters a-z and A-Z)</small>
+            <br><br>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" value="India" readonly>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Hobbies</b></legend>
+            <input type="checkbox" id="drawing" name="hobbies" value="Drawing">
+            <label for="drawing">Drawing</label>
+            <input type="checkbox" id="singing" name="hobbies" value="Singing">
+            <label for="singing">Singing</label>
+            <input type="checkbox" id="dancing" name="hobbies" value="Dancing">
+            <label for="dancing">Dancing</label>
+            <input type="checkbox" id="sketching" name="hobbies" value="Sketching">
+            <label for="sketching">Sketching</label>
+            <label for="other_hobbies">Others:</label>
+            <input type="text" id="other_hobbies" name="other_hobbies">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Qualification</b></legend>
+            <table border="1">
+                <tr>
+                    <th>Sl.No.</th>
+                    <th>Examination</th>
+                    <th>Board</th>
+                    <th>Percentage</th>
+                    <th>Year of Passing</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Class X</td>
+                    <td><input type="text" name="board_x"></td>
+                    <td><input type="text" name="percentage_x"></td>
+                    <td><input type="text" name="year_x"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Class XII</td>
+                    <td><input type="text" name="board_xii"></td>
+                    <td><input type="text" name="percentage_xii"></td>
+                    <td><input type="text" name="year_xii"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Graduation</td>
+                    <td><input type="text" name="board_grad"></td>
+                    <td><input type="text" name="percentage_grad"></td>
+                    <td><input type="text" name="year_grad"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Masters</td>
+                    <td><input type="text" name="board_masters"></td>
+                    <td><input type="text" name="percentage_masters"></td>
+                    <td><input type="text" name="year_masters"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Courses Applied For</b></legend>
+            <input type="radio" id="bca" name="course" value="BCA" required>
+            <label for="bca">BCA</label>
+            <input type="radio" id="bcom" name="course" value="B.Com">
+            <label for="bcom">B.Com</label>
+            <input type="radio" id="bsc" name="course" value="B.Sc">
+            <label for="bsc">B.Sc</label>
+            <input type="radio" id="ba" name="course" value="B.A">
+            <label for="ba">B.A</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Actions</b></legend>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </fieldset>
+    </form>
+</body>
+</html>
